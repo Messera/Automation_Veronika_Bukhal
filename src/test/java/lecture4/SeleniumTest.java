@@ -9,7 +9,7 @@ import org.testng.annotations.*;
 
 import java.time.Duration;
 
-public class Lecture4_2 {
+public class SeleniumTest {
 
     WebDriver driver;
 

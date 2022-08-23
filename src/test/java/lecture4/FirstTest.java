@@ -3,7 +3,7 @@ package lecture4;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Lecture4 {
+public class FirstTest {
 
 //    На вход дается число.
 //    Если число кратно 3 - возвращается T,
