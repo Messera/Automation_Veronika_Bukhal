@@ -51,10 +51,6 @@ public class Lecture {
         }};
         Assert.assertEquals(actualData, expectedData);
 
-
-
-
-
     }
 
     @AfterTest
