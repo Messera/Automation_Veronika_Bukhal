@@ -21,6 +21,10 @@ public class SimpleDriver {
         }
     }
 
+    public static void closeWebDriver(){
+        webDriver.close();
+        webDriver.quit();
+    }
 
     public static WebDriver getWebDriver() {
         return webDriver;
