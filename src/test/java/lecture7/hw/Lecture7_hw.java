@@ -104,7 +104,6 @@ public class Lecture7_hw extends BaseTest {
         checkoutPage.clickFinish();
         checkoutPage.verifyPageTitle("CHECKOUT: COMPLETE!");
 
-
     }
 
 
@@ -114,6 +113,12 @@ public class Lecture7_hw extends BaseTest {
         loginPage.enterUsername(userName);
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLogin();
+    }
+
+    @Test
+    public void  testTest() {
+        getWebDriver().get("https://www.google.com/");
+        getWebDriver().findElement(By.xpath("//a[contains(text(),'Gmail')]")).click();
     }
 
 

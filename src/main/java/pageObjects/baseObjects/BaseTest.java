@@ -14,10 +14,10 @@ public abstract class BaseTest {
 
     }
 
-    @AfterTest
-    public void postconditions(){
-        System.out.println("I closed web driver!");
-        closeWebDriver();
-    }
+//    @AfterTest
+//    public void postconditions(){
+//        System.out.println("I closed web driver!");
+//        closeWebDriver();
+//    }
 
 }

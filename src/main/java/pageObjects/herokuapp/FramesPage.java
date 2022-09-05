@@ -2,7 +2,11 @@ package pageObjects.herokuapp;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
+
+import java.util.concurrent.TimeUnit;
 
 public class FramesPage extends BasePage {
 
@@ -36,6 +40,14 @@ public class FramesPage extends BasePage {
     public FramesPage clickBoldText(){
         click(boldText);
         return this;
+    }
+
+    public void checkText(){
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        System.out.println(driver.findElement(By.xpath("//*[@id=\"tinymce\"]/p")).getText());
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"tinymce\"]/p")).getText(), "Your content goes here.");
+        //не работает
+
     }
 
 }

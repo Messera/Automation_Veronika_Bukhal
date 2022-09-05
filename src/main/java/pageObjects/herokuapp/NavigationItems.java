@@ -5,7 +5,11 @@ public enum NavigationItems {
     DYNAMIC_LOADING("Dynamic Loading"),
     INFINITE_SCROLL("Infinite Scroll"),
     CONTEXT_MENU("Context Menu"),
-    FRAMES ("Frames");
+    FRAMES ("Frames"),
+    DYNAMIC_CONTROLS("Dynamic Controls"),
+    FILE_UPLOADER("File Upload");
+
+
 
     private String item;
 
