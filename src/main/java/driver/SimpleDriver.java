@@ -18,6 +18,10 @@ public class SimpleDriver {
             webDriver = new ChromeDriver(getChromeOptions());
             //without web driver manager
             //setWebDriver();
+//
+//            webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//            webDriver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
+//            webDriver.manage().timeouts().scriptTimeout(Duration.ofSeconds(20));
         }
     }
 

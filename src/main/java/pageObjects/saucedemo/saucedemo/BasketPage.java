@@ -2,11 +2,13 @@ package pageObjects.saucedemo.saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pageObjects.saucedemo.baseObjects.BasePage;
+import pageObjects.baseObjects.BasePage;
 
 import static driver.SimpleDriver.getWebDriver;
 
 public class BasketPage extends BasePage {
+
+
 
 
     private WebElement  getElementCartItem(String productName){
@@ -22,15 +24,23 @@ public class BasketPage extends BasePage {
         return getElementCartItem(productName).findElement(By.className("cart_quantity"));
 
     }
+    public BasketPage open() {
+        getWebDriver().findElement(By.id("shopping_cart_container")).click();
+        return this;
+    }
 
     public String getProductCost(String productName){
         return getText(getElementProductCost(productName));
     }
 
 
-
-    public String enterCartQuantity(String productName){
+    public String getCartQuantity(String productName){
         return getText(getElementCartQuantity(productName));
+    }
+
+    public BasketPage checkout() {
+        getWebDriver().findElement(By.id("checkout")).click();
+        return this;
     }
 
 

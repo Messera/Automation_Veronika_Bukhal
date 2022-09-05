@@ -1,4 +1,4 @@
-package pageObjects.saucedemo.baseObjects;
+package pageObjects.baseObjects;
 
 import driver.SimpleDriver;
 import org.testng.annotations.AfterTest;

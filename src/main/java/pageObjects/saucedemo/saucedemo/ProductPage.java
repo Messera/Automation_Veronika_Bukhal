@@ -3,7 +3,7 @@ package pageObjects.saucedemo.saucedemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import pageObjects.saucedemo.baseObjects.BasePage;
+import pageObjects.baseObjects.BasePage;
 
 import static driver.SimpleDriver.getWebDriver;
 
@@ -42,6 +42,8 @@ public class ProductPage extends BasePage {
     public String getProductCost(String productName) {
         return getText(getProductPrice(productName));
     }
+
+
 
 
 }

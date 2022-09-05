@@ -2,10 +2,8 @@ package lecture7;
 
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageObjects.saucedemo.baseObjects.BasePage;
-import pageObjects.saucedemo.baseObjects.BaseTest;
+import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.saucedemo.BasketPage;
 import pageObjects.saucedemo.saucedemo.HeaderPage;
 import pageObjects.saucedemo.saucedemo.LoginPage;
@@ -35,7 +33,7 @@ public class Lecture7_2 extends BaseTest {
         BasketPage basketPage = new BasketPage();
         String cartProductCost = basketPage.getProductCost(productName);
         Assert.assertEquals(productCost, cartProductCost);
-        Assert.assertEquals(basketPage.enterCartQuantity(productName), "1");
+        Assert.assertEquals(basketPage.getCartQuantity(productName), "1");
 
         }
 

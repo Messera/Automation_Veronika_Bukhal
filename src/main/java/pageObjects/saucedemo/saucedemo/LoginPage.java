@@ -1,8 +1,11 @@
 package pageObjects.saucedemo.saucedemo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import pageObjects.saucedemo.baseObjects.BasePage;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjects.baseObjects.BasePage;
+
+import java.time.Duration;
 
 import static driver.SimpleDriver.getWebDriver;
 
@@ -27,8 +30,17 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage verifyThatLoginPageIsClosed(){
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(10), Duration.ofSeconds(2));
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(loginBtn));
+        return this;
+    }
+
     public LoginPage clickLogin() {
         click(loginBtn);
         return this;
     }
+
+
+
 }
