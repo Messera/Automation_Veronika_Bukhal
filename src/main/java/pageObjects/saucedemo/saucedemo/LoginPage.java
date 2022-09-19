@@ -19,6 +19,10 @@ public class LoginPage extends BasePage {
         getWebDriver().get("https://www.saucedemo.com/");
         return this;
     }
+    public LoginPage open(String url) {
+        getWebDriver().get(url);
+        return this;
+    }
 
     public LoginPage enterUsername(String username) {
         enter(this.username, username);
@@ -31,7 +35,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage verifyThatLoginPageIsClosed(){
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(10), Duration.ofSeconds(2));
+        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(1), Duration.ofSeconds(1));
         webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(loginBtn));
         return this;
     }

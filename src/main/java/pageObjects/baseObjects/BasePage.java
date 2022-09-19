@@ -19,7 +19,7 @@ public abstract class BasePage {
 
     protected BasePage(){
         driver = getWebDriver();
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         actions = new Actions(driver);
     }
 
