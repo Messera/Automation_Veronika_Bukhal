@@ -9,25 +9,32 @@ import java.time.Duration;
 
 public class SimpleDriver {
 
-    private static WebDriver webDriver;
+    private static ThreadLocal <WebDriver> webDriver = new ThreadLocal<>();
 
     {
-        if (webDriver == null){
+        if (webDriver.get() == null){
             WebDriverManager.chromedriver().setup();
             // можно было так написать  -  WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-            webDriver = new ChromeDriver(getChromeOptions());
+            webDriver.set(new ChromeDriver(getChromeOptions()));
             //without web driver manager
             //setWebDriver();
+            webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
+            webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+            webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(5));
         }
     }
 
-    public static void closeWebDriver(){
-        webDriver.close();
-        webDriver.quit();
+    public static void closeWebDriver() {
+        if (webDriver.get() != null) {
+            webDriver.get().close();
+            webDriver.get().quit();
+            webDriver.remove();
+        }
     }
 
+
     public static WebDriver getWebDriver() {
-        return webDriver;
+        return webDriver.get();
     }
 
 
@@ -36,7 +43,7 @@ public class SimpleDriver {
         System.setProperty("webdriver.chrome.driver", "src/test/java/resources/chromedriver");
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        webDriver = driver;
+        webDriver.set(driver);
     }
 
 

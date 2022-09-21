@@ -1,4 +1,4 @@
-package pageObjects.saucedemo.baseObjects;
+package pageObjects.baseObjects;
 
 import driver.SimpleDriver;
 import org.testng.annotations.AfterTest;
@@ -8,14 +8,14 @@ import static driver.SimpleDriver.closeWebDriver;
 public abstract class BaseTest {
 
     @BeforeTest
-    public void preconditions() {
+    public void setUp() {
         System.out.println("I started new web driver!");
         new SimpleDriver();
 
     }
 
     @AfterTest
-    public void postconditions(){
+    public void stop(){
         System.out.println("I closed web driver!");
         closeWebDriver();
     }
