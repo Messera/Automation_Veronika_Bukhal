@@ -36,6 +36,31 @@ public class Lecture6_hw extends BaseTest {
         Assert.assertEquals(getWebDriver().findElement(By.id("item_0_title_link")).getText(), productName);
         Assert.assertEquals(getWebDriver().findElement(By.className("inventory_item_price")).getText(), price);
 
+
+        // getWebDriver().findElement(By.tagName("footer")).findElement(By.className("social_facebook")).click();
+        //getWebDriver().findElement(By.cssSelector("[class=\"social_facebook\"]")).click();
+        //getWebDriver().findElement(By.cssSelector("[class~=\"back\"]")).click();
+        //getWebDriver().findElement(By.cssSelector("[data-test|=\"continue\"]")).click();
+        //getWebDriver().findElement(By.cssSelector("[data-test^=\"continue\"]")).click();
+        //getWebDriver().findElement(By.cssSelector("[data-test$=\"shopping\"]")).click();
+
+
+
+
+
+//        cssSelector :
+
+//        tagname.class
+
+//[attribute*=value]
+//        И по xpath c осями добавь хотя бы
+//        Поиск по атрибуту, например By.xpath("//tag[@attribute='value']");
+//        Поиск по тексту, например By.xpath("//tag[text()='text']");
+//        Поиск по частичному совпадению атрибута, например By.xpath("//tag[contains(@attribute,'text')]");
+//        Поиск по частичному совпадению текста, например By.xpath("//tag[contains(text(),'text')]");
+//        ancestor, например //*[text()='Enterprise Testing']//ancestor::div
+//
+
     }
 
     @Test

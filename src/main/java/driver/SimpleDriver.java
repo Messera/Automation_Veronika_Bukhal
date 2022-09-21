@@ -28,9 +28,10 @@ public class SimpleDriver {
         if (webDriver.get() != null) {
             webDriver.get().close();
             webDriver.get().quit();
-            webDriver = null;
+            webDriver.remove();
         }
     }
+
 
     public static WebDriver getWebDriver() {
         return webDriver.get();

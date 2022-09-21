@@ -22,7 +22,7 @@ public class Lecture9_hw_products extends BaseTest {
         new ProductPage().verifyPageTitle();
     }
 
-    @Test(priority = 2, invocationCount = 3)
+    @Test(priority = 2, invocationCount = 3, threadPoolSize = 3)
     public void addToCartTest1(){
 
         String productName = "Sauce Labs Backpack";
