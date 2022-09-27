@@ -52,8 +52,6 @@ public class Lecture8_hw extends BaseTest {
         new FramesPage()
                 .clickFrameLink("iFrame")
                 .checkText();
-        //не работает
-
 
 
     }

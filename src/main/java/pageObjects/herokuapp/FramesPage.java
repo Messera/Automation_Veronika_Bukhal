@@ -44,9 +44,9 @@ public class FramesPage extends BasePage {
 
     public void checkText(){
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.switchTo().frame(driver.findElement(iframe));
         System.out.println(driver.findElement(By.xpath("//*[@id=\"tinymce\"]/p")).getText());
         Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"tinymce\"]/p")).getText(), "Your content goes here.");
-        //не работает
 
     }
 
