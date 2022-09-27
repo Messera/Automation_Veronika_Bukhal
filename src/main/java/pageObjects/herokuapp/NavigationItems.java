@@ -7,7 +7,8 @@ public enum NavigationItems {
     CONTEXT_MENU("Context Menu"),
     FRAMES ("Frames"),
     DYNAMIC_CONTROLS("Dynamic Controls"),
-    FILE_UPLOADER("File Upload");
+    FILE_UPLOADER("File Upload"),
+    SORTABLE_DATA_TABLES("Sortable Data Tables");
 
 
 

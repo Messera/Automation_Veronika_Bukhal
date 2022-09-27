@@ -1,9 +1,7 @@
 package lecture9.hw;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import driver.SimpleDriver;
+import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.saucedemo.BasketPage;
 import pageObjects.saucedemo.saucedemo.LoginPage;
@@ -13,6 +11,7 @@ public class Lecture9_hw_products extends BaseTest {
 
     @BeforeMethod
     public void preconditions(){
+        new SimpleDriver();
         new LoginPage()
                 .open("https://www.saucedemo.com/")
                 .enterUsername("standard_user")
@@ -42,6 +41,11 @@ public class Lecture9_hw_products extends BaseTest {
         basketPage.checkIfProductExist(productName);
         basketPage.removeFromCart(productName);
         basketPage.checkIfProductExist(productName);
+    }
+
+    @AfterMethod
+    public void postconditions() {
+        SimpleDriver.closeWebDriver();
     }
 
     @DataProvider(name = "Product name")
