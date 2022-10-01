@@ -4,7 +4,6 @@ import driver.SimpleDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
@@ -15,7 +14,7 @@ import static org.openqa.selenium.support.locators.RelativeLocator.with;
 public class Lecture6_hw extends BaseTest {
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
         SimpleDriver simpleDriver = new SimpleDriver();
         getWebDriver().get("https://www.saucedemo.com/");
 
@@ -23,7 +22,7 @@ public class Lecture6_hw extends BaseTest {
 
 
     @Test
-    public void  cartTest() {
+    public void cartTest() {
         getWebDriver().findElement(By.id("user-name")).sendKeys("standard_user");
         getWebDriver().findElement(By.name("password")).sendKeys("secret_sauce");
         getWebDriver().findElement(By.id("login-button")).click();
@@ -45,9 +44,6 @@ public class Lecture6_hw extends BaseTest {
         //getWebDriver().findElement(By.cssSelector("[data-test$=\"shopping\"]")).click();
 
 
-
-
-
 //        cssSelector :
 
 //        tagname.class
@@ -64,7 +60,7 @@ public class Lecture6_hw extends BaseTest {
     }
 
     @Test
-    public void  searchTest() {
+    public void searchTest() {
         getWebDriver().findElement(By.id("user-name")).sendKeys("standard_user");
         getWebDriver().findElement(By.name("password")).sendKeys("secret_sauce");
         getWebDriver().findElement(By.id("login-button")).click();

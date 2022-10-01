@@ -11,17 +11,17 @@ public class FileUploaderPage extends BasePage {
     private By uploadedFiles = By.id("uploaded-files");
 
 
-    public FileUploaderPage chooseFile(String path){
+    public FileUploaderPage chooseFile(String path) {
         driver.findElement(chooseFileBtn).sendKeys(path);
         return this;
     }
 
-    public FileUploaderPage uploadFile(){
+    public FileUploaderPage uploadFile() {
         click(uploadFileBtn);
         return this;
     }
 
-    public void checkUpload(String path){
+    public void checkUpload(String path) {
         Assert.assertTrue(path.contains(driver.findElement(uploadedFiles).getText()));
     }
 

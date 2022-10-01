@@ -2,10 +2,12 @@ package lecture4;
 
 import driver.SimpleDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import static driver.SimpleDriver.getWebDriver;
 
@@ -13,7 +15,7 @@ public class SeleniumTest {
 
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
         SimpleDriver simpleDriver = new SimpleDriver();
         getWebDriver().get("https://www.sharelane.com/cgi-bin/register.py");
 
@@ -26,7 +28,7 @@ public class SeleniumTest {
     }
 
     @Test
-    public void  test1() {
+    public void test1() {
 
         WebElement zipCode = getWebDriver().findElement(By.name("zip_code"));
         WebElement continueButton = getWebDriver().findElement(By.xpath("//*[@value='Continue']"));
@@ -39,8 +41,7 @@ public class SeleniumTest {
     }
 
     @Test
-    public void  test2() {
-
+    public void test2() {
 
 
         WebElement zipCode = getWebDriver().findElement(By.name("zip_code"));
@@ -57,7 +58,7 @@ public class SeleniumTest {
 
 
     @Test
-    public void  test3() {
+    public void test3() {
 
 
         WebElement zipCode = getWebDriver().findElement(By.name("zip_code"));
@@ -73,7 +74,7 @@ public class SeleniumTest {
     }
 
     @AfterTest
-    public void postconditions(){
+    public void postconditions() {
         getWebDriver().close();
     }
 

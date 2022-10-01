@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 public class Lecture10Test extends BaseTest {
 
     @Test
-    public void test(){
+    public void test() {
 //        System.out.println(System.getProperty("user.dir"));
 //        System.out.println(System.getProperty("user.home"));
 //        System.out.println(System.getProperty("env"));
@@ -22,7 +22,7 @@ public class Lecture10Test extends BaseTest {
 //        System.out.println(new SortableDataTablesPage().getTableRowsData());
 //        new SortableDataTablesPage().getTableRowsData().forEach(System.out::println);
 
-        Map<String, List<String>> mapTableData = new SortableDataTablesPage().clickTableColumn("Last Name").getTableData();
+        Map<String, List<String>> mapTableData = new SortableDataTablesPage().checkTableIsDisplayed().clickTableColumn("Last Name").getTableData();
 
         List<List<String>> tableData = new SortableDataTablesPage().getTableRowsData();
         Assert.assertTrue(tableData.get(2).contains("$100.00"));

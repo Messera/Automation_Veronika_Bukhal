@@ -35,9 +35,9 @@ public class Lecture7_2 extends BaseTest {
         Assert.assertEquals(productCost, cartProductCost);
         Assert.assertEquals(basketPage.getCartQuantity(productName), "1");
 
-        }
-
     }
+
+}
 
 
 

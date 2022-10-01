@@ -6,10 +6,10 @@ public class PalindromeShort {
 
         String s = "А роза упала на лапу Азора";
 
-        if(s.replaceAll("\\W", "").
-                equalsIgnoreCase(new StringBuilder (s.replaceAll("\\W", "")).reverse().toString())) {
+        if (s.replaceAll("\\W", "").
+                equalsIgnoreCase(new StringBuilder(s.replaceAll("\\W", "")).reverse().toString())) {
 
-           System.out.println("Фраза является палиндромом");
+            System.out.println("Фраза является палиндромом");
 
         } else {
 

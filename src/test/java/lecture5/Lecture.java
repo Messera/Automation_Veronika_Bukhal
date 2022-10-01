@@ -2,12 +2,10 @@ package lecture5;
 
 import driver.SimpleDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -19,7 +17,7 @@ import static driver.SimpleDriver.getWebDriver;
 public class Lecture {
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
         SimpleDriver simpleDriver = new SimpleDriver();
         getWebDriver().get("http://13gp.by/informatsiya/meditsinskie-kalkulyatory/995-raschet-skorosti-klubochkovoj-filtratsii-skf");
 
@@ -27,9 +25,9 @@ public class Lecture {
 
 
     @Test
-    public void  test1() {
+    public void test1() {
 
-        Select selectGender = new Select(getWebDriver().findElement(By.id( "oSex")));
+        Select selectGender = new Select(getWebDriver().findElement(By.id("oSex")));
         selectGender.selectByValue("1");
         getWebDriver().findElement(By.id("oCr")).sendKeys("75");
         getWebDriver().findElement(By.id("oAge")).sendKeys("23");
@@ -39,7 +37,7 @@ public class Lecture {
         getWebDriver().findElement(By.cssSelector("[value='Рассчитать']")).click();
         List<String> actualData = new ArrayList<>();
         List<WebElement> result = getWebDriver().findElements(By.cssSelector("li div[id]"));
-        result.forEach(webElement ->  {
+        result.forEach(webElement -> {
             actualData.add(webElement.getText());
         });
         List<String> expectedData = new ArrayList<>() {{
@@ -54,15 +52,13 @@ public class Lecture {
     }
 
     @AfterTest
-    public void postconditions(){
+    public void postconditions() {
         getWebDriver().close();
     }
 
 //    private void enter(String id, String value) {
 //        getWebDriver().findElement(By.id(id)).clear();
 //    }
-
-
 
 
 }

@@ -2,7 +2,7 @@ package pageObjects.saucedemo.saucedemo;
 
 import org.openqa.selenium.By;
 
-public class HeaderPage extends BasketPage{
+public class HeaderPage extends BasketPage {
 
     By basketBtn = By.className("shopping_cart_link");
     By navigationBtn = By.id("react-burger-menu-btn");
@@ -12,29 +12,29 @@ public class HeaderPage extends BasketPage{
     By resetBtn = By.id("reset_sidebar_link");
 
 
-    public void clickBasketBtn(){
+    public void clickBasketBtn() {
         click(basketBtn);
     }
 
-    public void clickNavigationBtn(){
+    public void clickNavigationBtn() {
         click(navigationBtn);
     }
 
-    public void clickAllItemsBtn(){
+    public void clickAllItemsBtn() {
         click(allItemsBtn);
     }
-    public void clickAboutBtn(){
+
+    public void clickAboutBtn() {
         click(aboutBtn);
     }
-    public void clickLogoutBtn(){
+
+    public void clickLogoutBtn() {
         click(logoutBtn);
     }
-    public void clickResetBtn(){
+
+    public void clickResetBtn() {
         click(resetBtn);
     }
-
-
-
 
 
 }
