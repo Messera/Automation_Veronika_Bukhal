@@ -3,6 +3,7 @@ package pageObjects.saucedemo.saucedemo;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 
 import java.time.Duration;
@@ -16,12 +17,12 @@ public class LoginPage extends BasePage {
     By loginBtn = By.id("login-button");
 
     public LoginPage open() {
-        getWebDriver().get("https://www.saucedemo.com/");
+        load("https://www.saucedemo.com/");
         return this;
     }
 
     public LoginPage open(String url) {
-        getWebDriver().get(url);
+        load(url);
         return this;
     }
 
@@ -36,8 +37,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage verifyThatLoginPageIsClosed() {
-        WebDriverWait webDriverWait = new WebDriverWait(getWebDriver(), Duration.ofSeconds(1), Duration.ofSeconds(1));
-        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated(loginBtn));
+        Assert.assertTrue(elementNotExist(loginBtn));
         return this;
     }
 

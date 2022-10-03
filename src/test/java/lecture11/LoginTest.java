@@ -11,7 +11,7 @@ public class LoginTest extends BaseTest {
     @Parameters({"username", "password"})
     @Test
     public void login(String username, String password) {
-        new LoginPage()
+        get(LoginPage.class)
                 .open()
                 .enterUsername(username)
                 .enterPassword(password)

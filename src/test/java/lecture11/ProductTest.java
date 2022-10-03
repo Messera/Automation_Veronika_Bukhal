@@ -12,6 +12,10 @@ import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.saucedemo.ProductPage;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 public class ProductTest extends BaseTest {
 
     @Parameters({"username", "password", "steps"})
@@ -26,5 +30,7 @@ public class ProductTest extends BaseTest {
       if (steps.equals("0")) new LoginSteps().login(username, password);
         new ProductPage().verifyPageTitle();
     }
+
+
 
 }
