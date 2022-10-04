@@ -4,15 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pageObjects.baseObjects.BasePage;
 
-import java.util.NoSuchElementException;
-
 import static driver.SimpleDriver.getWebDriver;
 
 public class BasketPage extends BasePage {
 
 
     private WebElement getElementCartItem(String productName) {
-         return  getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
+        return getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
     }
 
 

@@ -16,7 +16,6 @@ public class CheckoutPage extends BasePage {
     private By title = By.xpath("//span[@class='title']");
 
 
-
     public CheckoutPage enterInformation() {
         enter(firstName, "Name");
         enter(lastName, "Surname");
@@ -26,12 +25,12 @@ public class CheckoutPage extends BasePage {
     }
 
 
-    private WebElement  getElementCartItem(String productName){
+    private WebElement getElementCartItem(String productName) {
         return getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
     }
 
 
-    private WebElement getElementProductCost (String productName){
+    private WebElement getElementProductCost(String productName) {
         return getElementCartItem(productName).findElement(By.className("inventory_item_price"));
     }
 
@@ -40,28 +39,28 @@ public class CheckoutPage extends BasePage {
 
     }
 
-    public String getProductCost(String productName){
+    public String getProductCost(String productName) {
         return getText(getElementProductCost(productName));
     }
 
-    public String getCartQuantity(String productName){
+    public String getCartQuantity(String productName) {
         return getText(getElementCartQuantity(productName));
     }
-
 
 
     public double getTotalResult() {
         double subtotal = Double.parseDouble(getWebDriver().findElement(By.className("summary_subtotal_label")).getText().replaceAll("[^0-9, .]", ""));
         double tax = Double.parseDouble(getWebDriver().findElement(By.className("summary_tax_label")).getText().replaceAll("[^0-9, .]", ""));
-        double totalResult = roundAvoid(subtotal + tax,2);
+        double totalResult = roundAvoid(subtotal + tax, 2);
         return totalResult;
     }
+
     public double getTotalValue() {
         double totalValue = Double.parseDouble(getWebDriver().findElement(By.className("summary_total_label")).getText().replaceAll("[^0-9, .]", ""));
         return totalValue;
     }
 
-    public CheckoutPage clickFinish(){
+    public CheckoutPage clickFinish() {
         click(By.id("finish"));
         return this;
     }

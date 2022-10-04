@@ -12,14 +12,15 @@ import static driver.SimpleDriver.getWebDriver;
 public class Lecture9_hw_login extends BaseTest {
 
     int count = 0;
+
     @Parameters("url")
     @BeforeMethod
-    public void preconditions(@Optional("https://www.google.com/") String url){
+    public void preconditions(@Optional("https://www.google.com/") String url) {
         new LoginPage()
                 .open(url);
     }
 
-    @Test (dataProvider = "Login data", description = "1 positive and 3 negative tests for login",  retryAnalyzer = Retry.class)
+    @Test(dataProvider = "Login data", description = "1 positive and 3 negative tests for login", retryAnalyzer = Retry.class)
     public void loginTest(String username, String password) {
 
         count++;
@@ -28,24 +29,25 @@ public class Lecture9_hw_login extends BaseTest {
                 .enterUsername(username)
                 .enterPassword(password)
                 .clickLogin();
-        switch (count){
-            case 1: new LoginPage().verifyThatLoginPageIsClosed();
-            break;
+        switch (count) {
+            case 1:
+                new LoginPage().verifyThatLoginPageIsClosed();
+                break;
             case 2:
                 Assert.assertEquals(getWebDriver().findElement(By.className("error-message-container")).getText(), "Epic sadface: Username is required");
-            break;
+                break;
             case 3:
                 Assert.assertEquals(getWebDriver().findElement(By.className("error-message-container")).getText(), "Epic sadface: Password is required");
-            break;
+                break;
             case 4:
                 Assert.assertEquals(getWebDriver().findElement(By.className("error-message-container")).getText(), "Epic sadface: Username and password do not match any user in this service");
-            break;
+                break;
 
         }
     }
 
     @DataProvider(name = "Login data")
-    public Object[][] getData(){
+    public Object[][] getData() {
         return new Object[][]{
                 {"standard_user", "secret_sauce"},
                 {"", "secret_sauce"},
@@ -53,8 +55,6 @@ public class Lecture9_hw_login extends BaseTest {
                 {"performance_gliatch_user", "secret_sauce"},
         };
     }
-
-
 
 
 }

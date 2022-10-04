@@ -13,32 +13,32 @@ public class DynamicControlsPage extends BasePage {
     private By inputBtn = By.xpath("//*[@id=\"input-example\"]/button");
 
 
-    public DynamicControlsPage clickCheckboxBtn(){
+    public DynamicControlsPage clickCheckboxBtn() {
         click(checkboxBtn);
         return this;
     }
 
-    public DynamicControlsPage clickInputBtn(){
+    public DynamicControlsPage clickInputBtn() {
         click(inputBtn);
         return this;
     }
 
-    public String checkboxIsGone(){
+    public String checkboxIsGone() {
         wait.until(ExpectedConditions.textToBe(message, "It's gone!"));
         if (driver.findElements(By.id("checkbox")).isEmpty())
             System.out.println("Checkbox is gone!");
         return getText(message);
-}
+    }
 
-    public String  inputEnabled(){
+    public String inputEnabled() {
         wait.until(ExpectedConditions.textToBe(message, "It's enabled!"));
         return getText(message);
 
     }
 
-    public DynamicControlsPage inputAvailability(){
+    public DynamicControlsPage inputAvailability() {
 
-        if (driver.findElement(input).isEnabled()){
+        if (driver.findElement(input).isEnabled()) {
             System.out.println("Input enabled!");
         } else {
             System.out.println("Input disabled!");
@@ -46,7 +46,6 @@ public class DynamicControlsPage extends BasePage {
         return this;
 
     }
-
 
 
 }

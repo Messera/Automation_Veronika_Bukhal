@@ -5,10 +5,6 @@ import pageObjects.baseObjects.BaseTest;
 import pageObjects.saucedemo.saucedemo.LoginPage;
 import pageObjects.saucedemo.saucedemo.ProductPage;
 
-import java.time.Duration;
-
-import static driver.SimpleDriver.getWebDriver;
-
 public class Lecture8 extends BaseTest {
 
     @Test

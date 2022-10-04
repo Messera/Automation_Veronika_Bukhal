@@ -15,8 +15,8 @@ public class Lecture8_2 extends BaseTest {
                 .open();
     }
 
-    @Test (enabled = false)
-    public void dynamicLoading_Test(){
+    @Test(enabled = false)
+    public void dynamicLoading_Test() {
         new NavigationPage()
                 .navigateTo(DYNAMIC_LOADING);
         new DynamicLoadingPage()

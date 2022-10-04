@@ -18,7 +18,7 @@ public class GoogleTest {
 
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
         SimpleDriver simpleDriver = new SimpleDriver();
         getWebDriver().get("https://www.google.com/");
 
@@ -31,10 +31,10 @@ public class GoogleTest {
     }
 
     @Test
-    public void  test1() {
+    public void test1() {
 
         getWebDriver().findElement(By.name("q")).sendKeys("Привет Мир", Keys.ENTER);
-        List <WebElement> results = getWebDriver().findElements(By.cssSelector("[lang ='ru'] h3"));
+        List<WebElement> results = getWebDriver().findElements(By.cssSelector("[lang ='ru'] h3"));
         for (WebElement element : results) {
             Assert.assertTrue(element.getText().contains("Мир"));
         }
@@ -42,7 +42,7 @@ public class GoogleTest {
     }
 
     @AfterTest
-    public void postconditions(){
+    public void postconditions() {
         getWebDriver().close();
     }
 
@@ -53,7 +53,6 @@ public class GoogleTest {
             throw new RuntimeException(e);
         }
     }
-
 
 
 }

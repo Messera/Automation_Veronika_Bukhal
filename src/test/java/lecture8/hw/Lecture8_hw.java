@@ -1,6 +1,5 @@
 package lecture8.hw;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
@@ -52,8 +51,6 @@ public class Lecture8_hw extends BaseTest {
         new FramesPage()
                 .clickFrameLink("iFrame")
                 .checkText();
-        //не работает
-
 
 
     }

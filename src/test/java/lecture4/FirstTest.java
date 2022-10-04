@@ -11,22 +11,25 @@ public class FirstTest {
 
 
     @Test
-    public  void Test1() {
-        Assert.assertEquals(getData(3),"T", "Values are different");    }
+    public void Test1() {
+        Assert.assertEquals(getData(3), "T", "Values are different");
+    }
 
     @Test
-    public  void Test2() {
-        Assert.assertEquals(getData(5),"M", "Values are different");    }
+    public void Test2() {
+        Assert.assertEquals(getData(5), "M", "Values are different");
+    }
 
 
     @Test
-    public  void Test3() {
-        Assert.assertEquals(getData(15),"S", "Values are different");    }
+    public void Test3() {
+        Assert.assertEquals(getData(15), "S", "Values are different");
+    }
 
     @Test
-    public  void Test4() {
-        Assert.assertTrue(getData(2).isEmpty(), "Values are different");    }
-
+    public void Test4() {
+        Assert.assertTrue(getData(2).isEmpty(), "Values are different");
+    }
 
 
     private String getData(int value) {
@@ -43,10 +46,10 @@ public class FirstTest {
     }
 
 
-@Test
-public  void myFirstTest() {
-    System.out.println("Hello World!");
-}
+    @Test
+    public void myFirstTest() {
+        System.out.println("Hello World!");
+    }
 
 
 }

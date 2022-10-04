@@ -9,10 +9,10 @@ import java.time.Duration;
 
 public class SimpleDriver {
 
-    private static ThreadLocal <WebDriver> webDriver = new ThreadLocal<>();
+    private static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
 
     {
-        if (webDriver.get() == null){
+        if (webDriver.get() == null) {
             WebDriverManager.chromedriver().setup();
             // можно было так написать  -  WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
             webDriver.set(new ChromeDriver(getChromeOptions()));

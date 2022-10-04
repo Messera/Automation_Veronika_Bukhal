@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 12" thread-count="2" parallel="tests">
+    <parameter name="username" value="standard_user"></parameter>
+    <parameter name="password" value="secret_sauce"></parameter>
+
+    <test name="Product test" enabled="false">
+
+        <classes>
+            <class name="lecture11.LoginTest"></class>
+            <class name="lecture12.Lecture12_Test"></class>
+        </classes>
+    </test>
+    <test name="Currency sort test">
+
+        <classes>
+            <class name="lecture12.Lecture12_2_Test"></class>
+        </classes>
+    </test>
+
+
+</suite>

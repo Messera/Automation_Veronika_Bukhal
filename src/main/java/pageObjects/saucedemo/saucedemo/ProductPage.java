@@ -27,23 +27,24 @@ public class ProductPage extends BasePage {
         verifyPageUrl();
     }
 
-    public void verifyPageUrl() {
+    public ProductPage verifyPageUrl() {
         Assert.assertTrue(getWebDriver().getCurrentUrl().contains("inventory.html"));
+        return this;
     }
 
-    public void verifyPageTitle() {
+    public ProductPage verifyPageTitle() {
         Assert.assertEquals(getText(title), "PRODUCTS");
+        return this;
     }
 
-    public void addProductToBasket(String productName) {
+    public ProductPage addProductToBasket(String productName) {
         click(getAddToCartBtn(productName));
+        return this;
     }
 
     public String getProductCost(String productName) {
         return getText(getProductPrice(productName));
     }
-
-
 
 
 }

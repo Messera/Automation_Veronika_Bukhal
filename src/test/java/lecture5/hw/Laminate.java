@@ -22,7 +22,7 @@ public class Laminate {
     List<String> actualData = new ArrayList<>();
 
     @BeforeTest
-    public void preconditions(){
+    public void preconditions() {
         SimpleDriver simpleDriver = new SimpleDriver();
         getWebDriver().get("https://masterskayapola.ru/kalkulyator/laminata.html");
 
@@ -34,7 +34,7 @@ public class Laminate {
     }
 
     @Test
-    public void  test1() {
+    public void test1() {
 
         enter("calc_roomwidth", "10");
         enter("calc_roomheight", "5");
@@ -69,12 +69,12 @@ public class Laminate {
 //            System.out.println(elem);
 //        }
 
-      List<String> expectedData = Arrays.asList("49.70 м2.",
-              "266 шт.",
-             "23 шт.",
-             "26220 руб.",
-              "10 шт.",
-              "20 шт.");
+        List<String> expectedData = Arrays.asList("49.70 м2.",
+                "266 шт.",
+                "23 шт.",
+                "26220 руб.",
+                "10 шт.",
+                "20 шт.");
 
         Assert.assertEquals(actualData, expectedData);
 
@@ -82,7 +82,7 @@ public class Laminate {
 
 
     @Test
-    public void  test2() {
+    public void test2() {
 
         enter("calc_roomwidth", "12");
         enter("calc_roomheight", "9");
@@ -115,7 +115,7 @@ public class Laminate {
 
 
     @Test
-    public void  test3() {
+    public void test3() {
 
         enter("calc_roomwidth", "6");
         enter("calc_roomheight", "2");
@@ -148,18 +148,18 @@ public class Laminate {
 
 
     @AfterTest
-    public void postconditions(){
+    public void postconditions() {
         getWebDriver().close();
     }
 
-        private void enter(String name, String value) {
-            getWebDriver().findElement(By.name(name)).sendKeys(Keys.chord(Keys.SHIFT,Keys.RIGHT,Keys.RIGHT,Keys.RIGHT, Keys.RIGHT), value);
+    private void enter(String name, String value) {
+        getWebDriver().findElement(By.name(name)).sendKeys(Keys.chord(Keys.SHIFT, Keys.RIGHT, Keys.RIGHT, Keys.RIGHT, Keys.RIGHT), value);
     }
 
-    private void getActualData(){
+    private void getActualData() {
         actualData.clear();
         List<WebElement> result = getWebDriver().findElements(By.cssSelector("div [class='form_element'] span[id]"));
-        result.forEach(webElement ->  {
+        result.forEach(webElement -> {
             actualData.add(webElement.getText());
         });
     }
