@@ -28,7 +28,7 @@ public abstract class BasePage {
     }
 
 
-    //???????
+    //???зачем это
     protected FluentWait<WebDriver> fluentWait(long timeout, long pollingEvery){
         return new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(timeout))
@@ -36,7 +36,7 @@ public abstract class BasePage {
                 .ignoring(NoSuchElementException.class)
                 .ignoring(StaleElementReferenceException.class);
     }
-////?????
+    //???что происходит ^
 
     protected WebElement findElement(By locator) {
         return driver.findElement(locator);
