@@ -1,4 +1,4 @@
-package pageObjects.saucedemo.saucedemo;
+package pageObjects.saucedemo;
 
 import org.openqa.selenium.By;
 

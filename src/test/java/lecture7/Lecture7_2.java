@@ -4,10 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.BasketPage;
-import pageObjects.saucedemo.saucedemo.HeaderPage;
-import pageObjects.saucedemo.saucedemo.LoginPage;
-import pageObjects.saucedemo.saucedemo.ProductPage;
+import pageObjects.saucedemo.BasketPage;
+import pageObjects.saucedemo.HeaderPage;
+import pageObjects.saucedemo.LoginPage;
+import pageObjects.saucedemo.ProductPage;
 
 public class Lecture7_2 extends BaseTest {
 

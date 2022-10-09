@@ -1,7 +1,7 @@
 package lecture11.steps;
 
 import pageObjects.baseObjects.BasePage;
-import pageObjects.saucedemo.saucedemo.LoginPage;
+import pageObjects.saucedemo.LoginPage;
 
 public class LoginSteps extends BasePage {
 

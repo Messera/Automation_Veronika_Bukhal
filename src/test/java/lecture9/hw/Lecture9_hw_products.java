@@ -6,9 +6,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.BasketPage;
-import pageObjects.saucedemo.saucedemo.LoginPage;
-import pageObjects.saucedemo.saucedemo.ProductPage;
+import pageObjects.saucedemo.BasketPage;
+import pageObjects.saucedemo.LoginPage;
+import pageObjects.saucedemo.ProductPage;
 
 public class Lecture9_hw_products extends BaseTest {
 

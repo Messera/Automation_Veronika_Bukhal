@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 13" thread-count="1" parallel="tests">
+    <parameter name="email" value="test@test.com"></parameter>
+    <parameter name="password" value="secret_sauce"></parameter>
+    <parameter name="url" value="https://moodpanda.com/"></parameter>
+    <parameter name="username" value="standard_user"></parameter>
+
+    <test name="Mood Panda tests (PageFactory)" enabled="false">
+        <classes>
+            <class name="lecture13.LoginPageFactory_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Mood Panda tests (Component)" enabled="false">
+        <classes>
+            <class name="lecture13.LoginComponent_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Mood Panda tests (Value Object)" enabled="false">
+        <classes>
+            <class name="lecture13.SignUpValueObject_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Sauce Demo Login Test (PageFactory)" enabled="false">
+        <classes>
+            <class name="lecture13.hw.SD_LoginPageFactory_Test"></class>
+        </classes>
+    </test>
+
+    <test name="Sauce Demo Login Test (ValueObject)">
+        <classes>
+            <class name="lecture13.hw.SD_LoginValueObject_Test"></class>
+        </classes>
+    </test>
+
+
+</suite>

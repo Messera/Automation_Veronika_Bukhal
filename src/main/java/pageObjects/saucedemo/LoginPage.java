@@ -1,14 +1,10 @@
-package pageObjects.saucedemo.saucedemo;
+package pageObjects.saucedemo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
-
-import java.time.Duration;
-
-import static driver.SimpleDriver.getWebDriver;
+import pageObjects.saucedemo.entity.Login;
+import pageObjects.saucedemo.entity.LoginBuilder;
 
 
 public class LoginPage extends BasePage {
@@ -43,6 +39,20 @@ public class LoginPage extends BasePage {
 
     public LoginPage clickLogin() {
         click(loginBtn);
+        return this;
+    }
+
+    public LoginPage enterData(Login login) {
+        enterUsername(login.getUsername());
+        enterPassword(login.getPassword());
+        clickLogin();
+        return this;
+    }
+
+    public LoginPage enterData(LoginBuilder login) {
+        enterUsername(login.getUsername());
+        enterPassword(login.getPassword());
+        clickLogin();
         return this;
     }
 

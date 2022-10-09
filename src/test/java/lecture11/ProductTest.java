@@ -10,11 +10,7 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.ProductPage;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import pageObjects.saucedemo.ProductPage;
 
 public class ProductTest extends BaseTest {
 

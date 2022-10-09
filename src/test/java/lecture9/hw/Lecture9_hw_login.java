@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.LoginPage;
+import pageObjects.saucedemo.LoginPage;
 import testNgUtils.Retry;
 
 import static driver.SimpleDriver.getWebDriver;
