@@ -25,7 +25,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage open() {
-        load("https://www.saucedemo.com/");
+        load();
         return this;
     }
 

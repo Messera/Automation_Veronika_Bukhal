@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 import pageObjects.saucedemo.entity.Login;
-import pageObjects.saucedemo.entity.LoginBuilder;
+import pageObjects.saucedemo.entity.LoginBuilderEnt;
 
 
 public class LoginPage extends BasePage {
@@ -13,7 +13,7 @@ public class LoginPage extends BasePage {
     By loginBtn = By.id("login-button");
 
     public LoginPage open() {
-        load("https://www.saucedemo.com/");
+        load();
         return this;
     }
 
@@ -29,6 +29,16 @@ public class LoginPage extends BasePage {
 
     public LoginPage enterPassword(String password) {
         enter(this.password, password);
+        return this;
+    }
+
+    public LoginPage enterUsername() {
+        enter(this.username, properties.getProperty("username"));
+        return this;
+    }
+
+    public LoginPage enterPassword() {
+        enter(this.password, properties.getProperty("password"));
         return this;
     }
 
@@ -49,7 +59,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
-    public LoginPage enterData(LoginBuilder login) {
+    public LoginPage enterData(LoginBuilderEnt login) {
         enterUsername(login.getUsername());
         enterPassword(login.getPassword());
         clickLogin();

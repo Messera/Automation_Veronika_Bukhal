@@ -7,13 +7,12 @@ import pageObjects.baseObjects.BaseTest;
 
 public class SD_LoginPageFactory_Test extends BaseTest {
 
-    @Parameters({"username", "password"})
-    @Test
-    public void login_Test(String username, String password){
+    @Test (enabled = false)
+    public void login_Test(){
         new LoginPage()
                 .open()
-                .enterUserName(username)
-                .enterPassword(password)
+                .enterUserName(properties.getProperty("username"))
+                .enterPassword(properties.getProperty("password"))
                 .clickLogin()
                 .verifyPageUrl();
     }

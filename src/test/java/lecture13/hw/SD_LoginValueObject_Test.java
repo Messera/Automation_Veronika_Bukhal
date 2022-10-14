@@ -1,14 +1,10 @@
 package lecture13.hw;
 
 import org.testng.annotations.Test;
-import pageFactory.moodpanda.HomePage;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.moodpanda.NavigationPage;
-import pageObjects.moodpanda.SignUpPage;
-import pageObjects.moodpanda.entity.SignUpBuilder;
 import pageObjects.saucedemo.LoginPage;
 import pageObjects.saucedemo.entity.Login;
-import pageObjects.saucedemo.entity.LoginBuilder;
+import pageObjects.saucedemo.entity.LoginBuilderEnt;
 
 public class SD_LoginValueObject_Test extends BaseTest {
 
@@ -26,14 +22,14 @@ public class SD_LoginValueObject_Test extends BaseTest {
 
     //какой смысл делать Value Object  и Builder для сайта, где из вводимых данных только логин и пароль?
 
-    @Test
+    @Test (enabled = false)
     public void loginBuilder_Test() {
         new LoginPage().open();
 
-        LoginBuilder login = new LoginBuilder.Builder()
+        LoginBuilderEnt login = new LoginBuilderEnt.LoginBuilder()
                 .withUsername("standard_user")
                 .withPassword("secret_sauce")
-                .build();
+                .create();
 
         new LoginPage().enterData(login).verifyThatLoginPageIsClosed();
 

@@ -1,6 +1,5 @@
 package lecture13;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageFactory.moodpanda.HomePage;
 import pageObjects.baseObjects.BaseTest;
@@ -11,11 +10,10 @@ import pageObjects.moodpanda.entity.SignUpBuilder;
 
 public class SignUpValueObject_Test extends BaseTest {
 
-    @Parameters({"url", "email", "password"})
     @Test
-    public void login_Test(String url, String email, String password){
+    public void login_Test(){
         new HomePage()
-                .open(url);
+                .open();
         new NavigationPage().clickSignUp();
 
         SignUp signUp = new SignUp() {{
@@ -29,19 +27,18 @@ public class SignUpValueObject_Test extends BaseTest {
         new SignUpPage().enterData(signUp);
     }
 
-    @Parameters({"url", "email", "password"})
     @Test
-    public void loginBuilder_Test(String url, String email, String password) {
-        new HomePage().open(url);
+    public void loginBuilder_Test() {
+        new HomePage().open();
         new NavigationPage().clickSignUp();
 
-        SignUpBuilder signUp = new SignUpBuilder.Builder()
+        SignUpBuilder signUp = new SignUpBuilder.BuilderSignUp()
                 .withEmail("email")
                 .withLastName("S")
                 .withFirstName("First Name")
                 .withCheckbox(false)
                 .withPassword("password")
-                .build();
+                .create();
 
         new SignUpPage().enterData(signUp);
 

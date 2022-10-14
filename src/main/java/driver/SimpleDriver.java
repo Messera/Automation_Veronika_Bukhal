@@ -14,10 +14,7 @@ public class SimpleDriver {
     {
         if (webDriver.get() == null) {
             WebDriverManager.chromedriver().setup();
-            // можно было так написать  -  WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
             webDriver.set(new ChromeDriver(getChromeOptions()));
-            //without web driver manager
-            //setWebDriver();
             webDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             webDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
             webDriver.get().manage().timeouts().scriptTimeout(Duration.ofSeconds(5));

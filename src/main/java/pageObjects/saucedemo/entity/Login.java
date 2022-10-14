@@ -1,37 +1,18 @@
 package pageObjects.saucedemo.entity;
-
-import pageObjects.moodpanda.SignUpPage;
-import pageObjects.moodpanda.entity.SignUp;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import pageObjects.saucedemo.LoginPage;
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Login {
 
-    private String username;
-    private String password;
-
-    public Login() {
-
-    }
-
-    public Login(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
+     String username;
+     String password;
 
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
