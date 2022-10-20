@@ -1,14 +1,10 @@
-package pageObjects.saucedemo.saucedemo;
+package pageObjects.saucedemo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
-
-import java.time.Duration;
-
-import static driver.SimpleDriver.getWebDriver;
+import pageObjects.saucedemo.entity.Login;
+import pageObjects.saucedemo.entity.LoginBuilderEnt;
 
 
 public class LoginPage extends BasePage {
@@ -17,7 +13,7 @@ public class LoginPage extends BasePage {
     By loginBtn = By.id("login-button");
 
     public LoginPage open() {
-        load("https://www.saucedemo.com/");
+        load();
         return this;
     }
 
@@ -36,6 +32,16 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    public LoginPage enterUsername() {
+        enter(this.username, properties.getProperty("username"));
+        return this;
+    }
+
+    public LoginPage enterPassword() {
+        enter(this.password, properties.getProperty("password"));
+        return this;
+    }
+
     public LoginPage verifyThatLoginPageIsClosed() {
         Assert.assertTrue(elementNotExist(loginBtn));
         return this;
@@ -43,6 +49,20 @@ public class LoginPage extends BasePage {
 
     public LoginPage clickLogin() {
         click(loginBtn);
+        return this;
+    }
+
+    public LoginPage enterData(Login login) {
+        enterUsername(login.getUsername());
+        enterPassword(login.getPassword());
+        clickLogin();
+        return this;
+    }
+
+    public LoginPage enterData(LoginBuilderEnt login) {
+        enterUsername(login.getUsername());
+        enterPassword(login.getPassword());
+        clickLogin();
         return this;
     }
 

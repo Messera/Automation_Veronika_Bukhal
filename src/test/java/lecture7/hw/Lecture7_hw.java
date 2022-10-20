@@ -1,5 +1,6 @@
 package lecture7.hw;
 
+import lombok.extern.log4j.Log4j;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,16 +8,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.BasketPage;
-import pageObjects.saucedemo.saucedemo.CheckoutPage;
-import pageObjects.saucedemo.saucedemo.LoginPage;
-import pageObjects.saucedemo.saucedemo.ProductPage;
+import pageObjects.saucedemo.BasketPage;
+import pageObjects.saucedemo.CheckoutPage;
+import pageObjects.saucedemo.LoginPage;
+import pageObjects.saucedemo.ProductPage;
 
 import java.time.Duration;
 import java.util.List;
 
 import static driver.SimpleDriver.getWebDriver;
-
+@Log4j
 public class Lecture7_hw extends BaseTest {
 
 
@@ -53,7 +54,7 @@ public class Lecture7_hw extends BaseTest {
         loginPage.clickLogin();
         long finish = System.currentTimeMillis();
         long totalTime = finish - start;
-        System.out.println("Total Time for page load - " + totalTime);
+        log.debug("Total Time for page load - " + totalTime);
         ProductPage productPage = new ProductPage();
         productPage.verifyPageTitle();
         Assert.assertTrue(totalTime > 4000);

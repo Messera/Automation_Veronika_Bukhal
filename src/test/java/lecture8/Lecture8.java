@@ -2,8 +2,8 @@ package lecture8;
 
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.LoginPage;
-import pageObjects.saucedemo.saucedemo.ProductPage;
+import pageObjects.saucedemo.LoginPage;
+import pageObjects.saucedemo.ProductPage;
 
 public class Lecture8 extends BaseTest {
 

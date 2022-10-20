@@ -10,15 +10,11 @@ import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import pageObjects.baseObjects.BaseTest;
-import pageObjects.saucedemo.saucedemo.ProductPage;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import pageObjects.saucedemo.ProductPage;
 
 public class ProductTest extends BaseTest {
 
-    @Parameters({"username", "password", "steps"})
+    @Parameters({"steps"})
     @Test()
     @Description("Product Test")
     @Step("Login and check Product Page")
@@ -26,8 +22,8 @@ public class ProductTest extends BaseTest {
     @Issue("Product Page issue")
     @TmsLink("Product Page tms")
 
-    public void ProductTest(String username, String password, @Optional("0") String steps){
-      if (steps.equals("0")) new LoginSteps().login(username, password);
+    public void ProductTest(@Optional("0") String steps){
+      if (steps.equals("0")) new LoginSteps().login(properties.getProperty("username"), properties.getProperty("password"));
         new ProductPage().verifyPageTitle();
     }
 

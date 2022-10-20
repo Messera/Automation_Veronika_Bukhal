@@ -1,11 +1,11 @@
-package pageObjects.saucedemo.saucedemo;
+package pageObjects.saucedemo;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 
-import static driver.SimpleDriver.getWebDriver;
+import static driver.DriverManager.getDriver;
 
 public class CheckoutPage extends BasePage {
 
@@ -26,7 +26,7 @@ public class CheckoutPage extends BasePage {
 
 
     private WebElement getElementCartItem(String productName) {
-        return getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
+        return getDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
     }
 
 
@@ -49,14 +49,14 @@ public class CheckoutPage extends BasePage {
 
 
     public double getTotalResult() {
-        double subtotal = Double.parseDouble(getWebDriver().findElement(By.className("summary_subtotal_label")).getText().replaceAll("[^0-9, .]", ""));
-        double tax = Double.parseDouble(getWebDriver().findElement(By.className("summary_tax_label")).getText().replaceAll("[^0-9, .]", ""));
+        double subtotal = Double.parseDouble(getDriver().findElement(By.className("summary_subtotal_label")).getText().replaceAll("[^0-9, .]", ""));
+        double tax = Double.parseDouble(getDriver().findElement(By.className("summary_tax_label")).getText().replaceAll("[^0-9, .]", ""));
         double totalResult = roundAvoid(subtotal + tax, 2);
         return totalResult;
     }
 
     public double getTotalValue() {
-        double totalValue = Double.parseDouble(getWebDriver().findElement(By.className("summary_total_label")).getText().replaceAll("[^0-9, .]", ""));
+        double totalValue = Double.parseDouble(getDriver().findElement(By.className("summary_total_label")).getText().replaceAll("[^0-9, .]", ""));
         return totalValue;
     }
 
