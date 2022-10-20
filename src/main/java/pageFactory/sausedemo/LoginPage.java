@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.baseObjects.BasePage;
 
-import static driver.SimpleDriver.getWebDriver;
+import static driver.DriverManager.getDriver;
 
 public class LoginPage extends BasePage {
 
@@ -45,7 +45,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage verifyPageUrl() {
-        Assert.assertNotEquals(getWebDriver().getCurrentUrl(), "https://www.saucedemo.com/");
+        Assert.assertNotEquals(getDriver().getCurrentUrl(), "https://www.saucedemo.com/");
         return this;
     }
 

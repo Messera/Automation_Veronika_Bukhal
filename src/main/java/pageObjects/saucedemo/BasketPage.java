@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import pageObjects.baseObjects.BasePage;
 
-import static driver.SimpleDriver.getWebDriver;
+import static driver.DriverManager.getDriver;
 
 public class BasketPage extends BasePage {
 
 
     private WebElement getElementCartItem(String productName) {
-        return getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
+        return getDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
     }
 
 
@@ -24,7 +24,7 @@ public class BasketPage extends BasePage {
     }
 
     public BasketPage open() {
-        getWebDriver().findElement(By.id("shopping_cart_container")).click();
+        getDriver().findElement(By.id("shopping_cart_container")).click();
         return this;
     }
 
@@ -38,7 +38,7 @@ public class BasketPage extends BasePage {
     }
 
     public BasketPage checkout() {
-        getWebDriver().findElement(By.id("checkout")).click();
+        getDriver().findElement(By.id("checkout")).click();
         return this;
     }
 
@@ -58,7 +58,7 @@ public class BasketPage extends BasePage {
     private void getElementCart(String productName) {
 
         try {
-            getWebDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
+            getDriver().findElement(By.xpath("//*[@class = 'inventory_item_name' and text() = '" + productName + "']//ancestor::div[@class='cart_item']"));
             System.out.println("Product was added successfully");
         } catch (org.openqa.selenium.NoSuchElementException e) {
             System.out.println("Product was removed successfully");
