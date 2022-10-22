@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Lecture 17" thread-count="2" parallel="tests">
+
+    <test name="RW test 1" enabled="false">
+        <classes>
+            <class name="lecture17.RW_Test"/>
+        </classes>
+    </test>
+
+    <test name="RW test 2" enabled="false">
+        <classes>
+            <class name="lecture17.RW_Test"/>
+        </classes>
+    </test>
+
+    <test name="Moodpanda Login tests">
+        <classes>
+            <class name="lecture17.hw.Login_Test"/>
+        </classes>
+    </test>
+
+    <test name="Moodpanda Sign Up tests">
+        <classes>
+            <class name="lecture17.hw.SignUp_Test"/>
+        </classes>
+    </test>
+
+</suite>
