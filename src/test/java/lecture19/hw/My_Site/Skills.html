@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en-BY">
+
+<head>
+    <meta name="author" content="Veronika Bukhal">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="QA engineer">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Veronika Bukhal</title>
+</head>
+<body>
+    
+    <header class="header hskills" id="topS">
+        <div class="container" >
+           <div class="header__inner">
+                <div class="header__logo"><a href="Index.html"><img src="assets/images/Stork.gif" width="10%"></a></div>
+
+                    <nav class="nav">
+                        <a class="nav__link" href="Index.html"> Home</a>
+                        <a class="nav__link" href="Skills.html"> Skills</a>
+                        <a class="nav__link" href="Work.html"> Work</a>
+                        <div class="dropdown">
+                            <a class="nav__link" href="Hobbies.html">Hobbies</a>
+                              <div class="dropdown-content">
+                              <a href="Hobbies.html#FS">Figure Skating</a>
+                              <a href="Hobbies.html#Mus">Music</a>
+                              <a href="Hobbies.html#Trav">Traveling</a>
+                              <a href="Hobbies.html#Evenmore">Others</a>
+                              </div>
+                        </div>
+                        <a class="nav__link" href="Contact.html"> Contacts</a>
+                    </nav>
+                
+            </div>
+        </div>
+    </header>
+    
+    
+<div class="intro__skills">
+    <div class="container__skills">
+        <h1 class="skills__title" id=topS>Special skills</h1>
+ <a href="#topS" id="myBtnS" title="Go to top">Up</a>
+<!-- ACCORDION -->
+        
+        <section class="accor">
+            
+            <details open>
+                <summary>Web & Programming skills</summary>
+                    <div class="content">
+                        <h3>HTML & CSS</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar mid">junior</div> 
+                            </div> 
+                        <h3>C#</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar beg">beginner</div> 
+                            </div> 
+                    </div>
+            </details>
+            
+            <details>
+                <summary>DataBases</summary>
+                    <div class="content">
+                        <h3>MySQL</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar mid">junior</div> 
+                            </div> 
+                    </div>
+            </details>
+            
+            <details>
+                <summary>Test automation & API</summary>
+                    <div class="content">
+                        <h3>Selenium & Catalon</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar beg">beginner</div> 
+                            </div> 
+                        <h3>Postman & Charles</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar beg">beginner</div> 
+                            </div> 
+                    </div>
+            </details>
+            
+            <details>
+                <summary>Languages</summary>
+                    <div class="content">
+                        <h3>English</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar eng">B1+</div> 
+                            </div>
+                        <h3>Swedish</h3>
+                            <div class="progress"> 
+                                <div class="progress-bar swe">0, but wishful</div> 
+                            </div>
+                    </div>
+            </details>
+            
+        </section>
+    </div>    
+</div>
+            
+              
+         
+    
+<div class="skills__box">
+    <div class="container__hobbies">
+        <h1  class="hobbies__title sk">Here you can see examples of...</h1>
+            
+        <h1  class="sk_ti_ex">Test Cases</h1>
+    <div class="doc_examples">  
+        
+        
+        
+        <table>
+  <tr>
+    <th>ID</th>
+    <th>Priority</th> 
+    <th>RQ</th>
+    <th>Module</th>
+    <th>Sub module</th>
+    <th>Description</th>
+    <th>Expected result</th>
+  </tr>
+  <tr>
+    <td>VR2</td>
+    <td>Smoke</td>
+    <td>R21</td>
+    <td>pro.torontocaterers</td>
+    <td>Vendor registration</td>
+    <td>Check that it is impossible to go to the next vendor registration page if the required fields (with an asterisk) are not filled.	
+						
+					
+      </td>
+      <td></td>
+    
+  </tr>
+     <tr>
+         <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+        Pre-conditions:	<br>
+		1) Navigate to Pro page. <br>	
+		2) Click on the button Get listed. <br>
+         </td>
+         <td></td>
+     
+     </tr>
+<tr>
+    <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+    Steps to reproduce:	
+         </td>
+     <td></td>
+     </tr>
+     
+<tr>
+    <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+    
+	  1. Without filling in any fields, click the "next" button.<br>	
+      2. Fill in all fields with an asterisk except one with valid information and click the "next" button. <br>
+      3. Repeat step 2 for each of the fields with asterisk (Company Name, Contact Person, Select City, Select Category, Phone, Email, Website).	
+         </td>
+    <td>1. All fields with an asterisk, including the captcha, are highlighted in red. "Required" appears at the bottom of the fields with an asterisk.<br>
+      2. Frames of all filled fields turns gray. The entered data retain their values. An empty field remains highlighted with a red border. "Required" is at the bottom of the empty field with an asterisk.<br>
+     3. The same as on the step 2.
+      </td>
+     
+</tr>
+<tr>  <td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td> </tr>
+  <tr>
+    <th>ID</th>
+    <th>Priority</th> 
+    <th>RQ</th>
+    <th>Module</th>
+    <th>Sub module</th>
+    <th width=25%>Description</th>
+    <th>Expected result</th>
+  </tr>
+  <tr>
+    <td>US1</td>
+    <td>Critical-Path</td>
+    <td>R20</td>
+    <td>torontocaterers</td>
+    <td>User settings</td>
+    <td>Check the Account Settings pop-up.		
+      </td>
+      <td></td>
+    
+  </tr>
+     <tr>
+         <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+        Pre-conditions:	<br>
+		1) Navigate to Torontocaterers.<br>	
+		2)  Log in as a user with an existing account. <br>
+         </td>
+         <td></td>
+     
+     </tr>              
+                
+   <tr>
+    <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+    Steps to reproduce:	
+         </td>
+     <td></td>
+     </tr>
+     
+<tr>
+    <td></td> <td></td> <td></td> <td></td> <td></td>
+         <td> 
+    
+	 1. Click on the User name on the upper right corner of the page.<br>
+             2. Click on Settings link. <br>
+             3. Change username in the field "I'm" and press the Save button. <br>
+             4. Change the Email in the field "Email" and press the Save button. Log out.  Log in with new Email. <br>
+             5. Write down a new password in the field New Password and confirm it in the field Confirm Password. Log out.  Log in with new Password. <br>
+             6. Change the type of event on Wedding and press the Save button.<br>
+             7. Change the type of event on Corporate event and press the Save button.<br>
+             8. Change the type of event on Social event and press the Save button.<br>
+             9. Choose event type as Wedding and enter a Partner name at the field  "Partner name". Press the Save button.<br>
+10. Choose any Event date and press the Save button.<br>
+11. Enter  budget at Event budget field  and press the Save button.<br>
+12. Enter Guest count at Guest count field  and press the Save button.<br>
+13. Make some changes at setting pop-up and press button Cancel.<br>
+14. Make some changes at setting pop-up and press Close button.<br>
+         </td>
+    <td>1.The drop-down with text "Hello *username*!", links to "Settings", "Log out", "My Dashboard", "Checklist", "My vendors" appears.<br>
+        2. User redirected to My Dashboard page and pop-up with Account Settings appears. There are fields: I'm; Email; New Password; 
+Confirm Password; Event type with drop-down categories: Wedding, Corporate event, Social event; My partner (if Wedding category is choosed); Event date (or Wedding date if Wedding category is choosed); Event Budget (or Wedding Budget if Wedding category is choosed); No. of guests. There are Close button at the upper right corner of the pop-up and Save and Cancel buttons at the bottom of the pop-up. <br>
+        3. The username at the Dashboard is successfully changed. <br>
+        4. Log in with new Email is successful. <br>
+        5. Log in with new Password is successful. <br>
+        6. Event type is set as Wedding.<br>
+        7. Event type is set as Corporate event.<br>
+        8. Event type is set as Social event.<br>
+        9. Parter name is displayed at the dashboard as "*Username* & *Partername* are getting married!"<br>
+10. The Event date on Dashboard is changed. Progress bar and counter correctly shows days left until event.<br>
+11.  Event budget on Dashboard is changed.<br>
+12.  Guest count  on Dashboard is changed.<br>
+13. Changes are not saved.<br>
+14. Changes are not saved.<br>
+      </td>
+</tr>
+        </table>  
+     
+        
+        </div>  <!-- div doc_examples -->
+    </div>  <!-- div container__hobbies -->
+</div>  <!-- div  skills__box -->
+    
+    
+<div class="skills__box">
+    <div class="container__hobbies">
+        <h1  class="sk_ti_ex">Test case in Qase.io</h1>
+        <div class="doc_examples testcase">
+            <iframe src="assets/MS-2021-04-03.html"></iframe>
+        </div>  
+    </div>
+</div>
+    
+
+<div class="skills__box">
+    <div class="container__hobbies">
+        <h1  class="sk_ti_ex">Bug Reports</h1>
+        <div class="doc_examples bugrep">
+            <div class="ex__img">
+                <img   src="assets/images/BugReport2.png">
+            </div>
+            <div class="ex__img">
+                <img  src="assets/images/BugReport1.png">
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+<div class="skills__box">
+    <div class="container__hobbies">
+        <h1  class="sk_ti_ex">Checklist</h1>
+        <div class="doc_examples">
+            
+            <div class="checklist">         
+<ol>                 
+<li>Verify that user can load JPEG, JPG, PNG files.</li>
+<li>Verify that user can’t load other file types besides 
+    JPEG, JPG, PNG (GIF, MP3, AVI, DOC etc.).</li>
+<li>Verify that user can load file of the allowed type, 
+    and resolution and 10 Mb or less size.</li>
+<li>Verify that user can’t load file of the allowed type, 
+    and resolution and 0 Mb or more than 10 Mb size.</li>
+<li>Verify that user can load file of the allowed type and size 
+    and resolution less than 1080 x 1080 but more than 100 x 100.</li>
+<li>Verify that user can’t load file of the allowed type and 
+    size and resolution more than 1079 x 1079 or less than 101 x 101.</li>
+<li>Combine these checks.</li>
+</ol> 
+If we use Boundary Value Analysis and Equivalence Partitioning Testing, 
+we can check only 16 cases. According to this table we have 16 pairwises 
+to check and 64 cases for full check.
+
+                <div class="ex__img">
+                    <img  src="assets/images/pairwise.png">
+                </div>
+            </div> 
+        </div>           
+    </div>
+</div>
+    
+
+        <!-- Progress bars           
+            <div class="progress"> 
+                <div class="progress-bar beg">beginner</div> 
+            </div> 
+            <div class="progress"> 
+                <div class="progress-bar mid">middle</div> 
+            </div>
+            <div class="progress"> 
+                <div class="progress-bar adv">advanced</div> 
+            </div>
+            <div class="progress"> 
+                <div class="progress-bar pro">proficiency</div> 
+            </div> --> 
+
+    
+    </body>
+</html>

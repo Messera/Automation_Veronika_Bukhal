@@ -1,0 +1,27 @@
+{
+  "id" : 1,
+  "name" : "Jack",
+  "age" : 30,
+  "work" : true,
+  "country" : "Belarus",
+  "sex" : "male",
+  "cars" : [
+    "Audi",
+    "WV"
+  ],
+  "children" : [
+    {
+      "name" : "July",
+      "age" : 12
+    },
+    {
+      "name" : "John",
+      "age" : 15
+    }
+  ],
+  "wife" : {
+    "name" : "Darling",
+    "age" : 29,
+    "work" : null
+  }
+}
