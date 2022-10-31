@@ -1,28 +1,38 @@
 package lecture19.hw;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.WebDriverConditions;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.util.LinkedList;
 
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.WebDriverRunner.driver;
+
+
 
 public class MySite {
 
     @Test
     public void MySiteTest(){
 
-//        driver.get("file:///Users/veronikab/IdeaProjects/Automation_QA16/src/test/java/lecture19/hw/My_Site/Index.html");
-        //open("http://localhost:63342/Automation_QA16/lecture19/hw/My_Site/Index.html?_ijt=3kpkhvbtah7g6i27ost2d1ai8o&_ij_reload=RELOAD_ON_SAVE");
-        System.out.println($(By.className("about__text")).getText());
+        open("file:///Users/veronikab/IdeaProjects/Automation_QA16/src/test/java/lecture19/hw/My_Site/Index.html");
+
+        $(By.className("title__img")).shouldBe(Condition.exist);
+
+        Assert.assertEquals($(By.className("about__text")).getText(), "A promising tester with little experience, but a strong desire to grow and develop in this area. I think that the goal of the first higher education is to understand what you do not want to do for the rest of your life. By the age of 23, I realized that YOLO and followed my dream.");
         $(By.xpath("/html/body/header/div/div/nav/a[2]")).click();
-//        System.out.println($(By.xpath("/html/body/div[2]/div/div/table/tbody/tr[1]/th[6]")).getText());
-//        for (int i = 1; i < 12; i++) {
-//            System.out.println($(By.xpath("/html/body/div[2]/div/div/table/tbody/tr[" + i + "]/th[6]")).getText());
-//        }
+
+        LinkedList<String> description = new LinkedList<>();
+        for (int i = 2; i < 6; i++) {
+            description.add($(By.xpath("/html/body/div[2]/div/div/table/tbody/tr[" + i + "]/td[6]")).getText());
+        }
+        System.out.println(description);
+
+        $(By.xpath("//*[@id=\"topS\"]/div/div/nav/a[4]")).click();
+        webdriver().shouldHave(WebDriverConditions.url("file:///Users/veronikab/IdeaProjects/Automation_QA16/src/test/java/lecture19/hw/My_Site/Contact.html"));
+
     }
 
 }
